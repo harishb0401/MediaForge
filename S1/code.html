@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-container":"#f3a686","on-error-container":"#ffdad6","secondary":"#ffb598","on-tertiary-container":"#f3d3c5","tertiary-fixed-dim":"#dfc0b2","tertiary-container":"#725a4f","surface":"#1b1110","surface-dim":"#1b1110","secondary-fixed-dim":"#ffb598","inverse-on-surface":"#3a2d2d","on-surface":"#f3dedc","on-primary":"#680300","tertiary-fixed":"#fcdccd","on-primary-fixed":"#400100","secondary-fixed":"#ffdbce","surface-container-lowest":"#160c0b","primary":"#ffb4a7","on-secondary-fixed-variant":"#6e3820","on-primary-fixed-variant":"#900d03","surface-variant":"#3f3231","outline-variant":"#5a413c","on-error":"#690005","on-surface-variant":"#e2beb8","on-secondary":"#53220c","on-background":"#f3dedc","inverse-surface":"#f3dedc","surface-container":"#281d1c","on-tertiary-fixed-variant":"#584237","error-container":"#93000a","on-tertiary-fixed":"#28180f","primary-fixed":"#ffdad4","inverse-primary":"#b32919","surface-container-high":"#332727","on-primary-container":"#ffcfc6","primary-container":"#b42a1a","on-secondary-fixed":"#370e00","on-tertiary":"#3f2c22","secondary-container":"#713a22","error":"#ffb4ab","outline":"#a98984","primary-fixed-dim":"#ffb4a7","surface-tint":"#ffb4a7","background":"#1b1110","tertiary":"#dfc0b2","surface-container-highest":"#3f3231","surface-bright":"#433635","surface-container-low":"#241918"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"grid-margin-tablet":"2rem","space-md":"1rem","space-xs":"0.25rem","space-2xl":"3rem","space-3xl":"4.5rem","space-4xl":"6rem","grid-margin-desktop":"3rem","space-2xs":"0.125rem","gutter-tablet":"1rem","space-lg":"1.5rem","space-sm":"0.5rem","space-xl":"2rem","gutter-mobile":"0.75rem","grid-margin-mobile":"1.25rem","gutter-desktop":"1.5rem"},"fontFamily":{"technical-data":["JetBrains Mono"],"headline-lg-mobile":["Space Grotesk"],"technical-badge":["JetBrains Mono"],"body-sm":["DM Sans"],"body-md":["DM Sans"],"display-hero":["Space Grotesk"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"label-caps":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"body-lg":["DM Sans"]},"fontSize":{"technical-data":["13px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"600"}],"technical-badge":["10px",{"lineHeight":"12px","letterSpacing":"0.08em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"display-hero":["64px",{"lineHeight":"68px","letterSpacing":"-0.04em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"30px","letterSpacing":"-0.02em","fontWeight":"500"}],"headline-lg":["40px",{"lineHeight":"46px","letterSpacing":"-0.03em","fontWeight":"600"}],"display-hero-mobile":["38px",{"lineHeight":"42px","letterSpacing":"-0.03em","fontWeight":"700"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"500"}],"body-lg":["17px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="MediaForge Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wv7DFLlgy8UNIV1JdhJOCnHwRoJ2AewJxK4ZmdeWcdoBiQel9JptYc83zDE5TMWQW-dP4UInjIaOL7Ej6PvfcZ4Kb-ETITPndawM9UqtJujcAq1WIV2ED9FV_b67z96a6uv6y8oxpLaolFTBL9wwv8mgwzh2sWIP0eI57PflfNxFfQhwCJJjj7OZe8N8bgG9jQt6fZd1IAo3QsMOga3kcMqe5XG3zEDZYurlWFdXTOJy-DQK-5PRiw8VI"/><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface">MEDIAFORGE</span><span class="h-1.5 w-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#b42a1a]"></span></div><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-technical-data text-technical-data"><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-container-high text-on-surface font-technical-data text-technical-data" data-path="home" href="#">01/ HOME</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-technical-data text-technical-data transition-colors" data-path="product" href="#">02/ PRODUCT</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-technical-data text-technical-data transition-colors" data-path="features" href="#">03/ FEATURES</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-technical-data text-technical-data transition-colors" data-path="processing" href="#">04/ PROCESSING</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-technical-data text-technical-data transition-colors" data-path="downloads" href="#">05/ DOWNLOADS</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-technical-data text-technical-data transition-colors" data-path="dashboard" href="#">06/ DASHBOARD</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-technical-data text-technical-data transition-colors" data-path="about" href="#">07/ ABOUT</a></nav><div class="flex items-center gap-space-sm"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container-lowest"><span class="h-2 w-2 rounded-full bg-primary animate-ping"></span><span class="font-technical-badge text-technical-badge uppercase text-secondary">ENGINE V2.4 ONLINE</span></div><button aria-label="Notifications" class="h-8 w-8 flex items-center justify-center text-on-surface-variant hover:text-on-surface bg-surface-container-low transition-colors"><span class="material-symbols-outlined">notifications</span></button><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs bg-primary-container text-on-primary-container font-technical-data text-technical-data uppercase tracking-wider transition-opacity hover:opacity-90 shadow-[0_0_16px_rgba(180,42,26,0.4)]" data-path="processing" href="#">[ START FORGING ]</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full text-on-surface selection:bg-primary-container selection:text-on-primary-container relative">
+<!-- Background WebGL Shader Engine -->
+<!-- STITCH_SHADER_START:ANIMATION_2 class="fixed inset-0 w-full h-full pointer-events-none -z-10 opacity-75" -->
+<div class="fixed inset-0 w-full h-full pointer-events-none -z-10 opacity-75" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+// Simplex noise approximation
+vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+float snoise(vec2 v) {
+  const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
+                      0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
+                     -0.577350269189626,  // -1.0 + 2.0 * C.x
+                      0.024390243902439); // 1.0 / 41.0
+  vec2 i  = floor(v + dot(v, C.yy) );
+  vec2 x0 = v -   i + dot(i, C.xx);
+  vec2 i1;
+  i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod289(i);
+  vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+        + i.x + vec3(0.0, i1.x, 1.0 ));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+  m = m*m ;
+  m = m*m ;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+  vec3 g;
+  g.x  = a0.x  * x0.x  + h.x  * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy / u_resolution.xy;
+    vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+    
+    // Normalized mouse with dampening
+    vec2 m = u_mouse / u_resolution;
+    vec2 m_centered = (u_mouse * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+    
+    float t = u_time * 0.18;
+    
+    // Multi-octave fluid ember warp
+    float n1 = snoise(p * 1.3 + vec2(t * 0.4, -t * 0.25));
+    float n2 = snoise(p * 2.6 - vec2(t * 0.3, t * 0.5) + n1 * 0.8);
+    float n3 = snoise(p * 4.2 + vec2(sin(t * 0.7), cos(t * 0.5)) + n2 * 0.5);
+    
+    // Distance from center glow & interactive mouse pull
+    float dCenter = length(p - m_centered * 0.15);
+    float glow = exp(-dCenter * 1.4) * 0.75;
+    
+    // Deep warm color palette
+    // Background: #070202 -> vec3(0.027, 0.008, 0.008)
+    // Dark accent: #5D170E -> vec3(0.365, 0.090, 0.055)
+    // Primary accent: #B42A1A -> vec3(0.706, 0.165, 0.102)
+    // Highlight / Amber: #D48B6D -> vec3(0.831, 0.545, 0.427)
+    
+    vec3 cBg = vec3(0.027, 0.008, 0.008);
+    vec3 cDarkAccent = vec3(0.365, 0.090, 0.055);
+    vec3 cCrimson = vec3(0.706, 0.165, 0.102);
+    vec3 cAmber = vec3(0.831, 0.545, 0.427);
+    
+    float field = clamp((n1 * 0.5 + n2 * 0.35 + n3 * 0.15 + 0.2) + glow * 0.6, 0.0, 1.0);
+    
+    vec3 color = mix(cBg, cDarkAccent, smoothstep(0.15, 0.55, field));
+    color = mix(color, cCrimson, smoothstep(0.48, 0.78, field));
+    color = mix(color, cAmber, smoothstep(0.75, 0.98, field) * 0.65);
+    
+    // Subtle scanline / technical vignette
+    float vignette = 1.0 - smoothstep(0.5, 1.8, length(p));
+    color *= vignette;
+    
+    // Film grain simulation
+    float grain = fract(sin(dot(st.xy + vec2(t * 0.1), vec2(12.9898, 78.233))) * 43758.5453);
+    color += (grain - 0.5) * 0.028;
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+<!-- Ambient Light Orbs -->
+<div class="fixed top-1/4 -left-48 w-96 h-96 bg-primary-container/20 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-1/3 -right-48 w-[32rem] h-[32rem] bg-secondary-container/20 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+<!-- SECTION 1: HERO -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop pt-space-xl pb-space-4xl overflow-hidden">
+<div class="max-w-[1536px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<!-- Left Column: Editorial Statement -->
+<div class="lg:col-span-6 flex flex-col items-start z-10">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT shadow-sm mb-space-lg">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-technical-badge text-technical-badge tracking-widest uppercase">MEDIAFORGE // HYPER-SPEED ENGINE // V2.4</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface uppercase tracking-tight flex flex-col gap-0 leading-none">
+<span class="text-on-surface">DOWNLOAD.</span>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-tertiary">CONVERT.</span>
+<span class="text-on-surface">FORGE.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-lg max-w-xl">
+          One high-fidelity workspace engineered for extracting, transcoding, and organizing streamable media at lossless bitrates with industrial precision.
+        </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md mt-space-2xl">
+<a class="px-space-xl py-space-md bg-primary-container text-on-primary-container font-technical-data text-technical-data uppercase tracking-wider rounded-DEFAULT shadow-[0_0_24px_rgba(180,42,26,0.5)] hover:bg-primary hover:text-on-primary transition-all duration-200 transform hover:-translate-y-0.5" href="#intake-terminal">
+            [ Start Forging ]
+          </a>
+<a class="px-space-xl py-space-md bg-surface-container-low text-secondary font-technical-data text-technical-data uppercase tracking-wider rounded-DEFAULT hover:bg-surface-container-high transition-colors flex items-center gap-space-xs" href="#pipeline-section">
+<span>Explore Platform</span>
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+</a>
+</div>
+<!-- Telemetry Metadata Strip -->
+<div class="grid grid-cols-3 gap-space-md mt-space-3xl pt-space-lg w-full bg-surface-container-lowest/60 p-space-md rounded-DEFAULT backdrop-blur-sm">
+<div>
+<div class="font-technical-badge text-technical-badge text-on-surface-variant uppercase">ENGINE CLUSTER</div>
+<div class="font-technical-data text-technical-data text-on-surface mt-space-2xs">EU-CENTRAL-09</div>
+</div>
+<div>
+<div class="font-technical-badge text-technical-badge text-on-surface-variant uppercase">THROUGHPUT</div>
+<div class="font-technical-data text-technical-data text-secondary mt-space-2xs">12.4 GB/S PEAK</div>
+</div>
+<div>
+<div class="font-technical-badge text-technical-badge text-on-surface-variant uppercase">TRANSCODE LATENCY</div>
+<div class="font-technical-data text-technical-data text-primary mt-space-2xs">0.08 SEC / MIN</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive 3D Reactor & Overlays -->
+<div class="lg:col-span-6 relative w-full flex items-center justify-center min-h-[540px]">
+<div class="relative w-full h-[520px] rounded-DEFAULT overflow-hidden bg-surface-container-lowest/50 shadow-2xl flex items-center justify-center">
+<!-- 3D Scene -->
+<!-- STITCH_THREEJS_START:ANIMATION_4 class="w-full h-[520px] bg-transparent" -->
+<div class="w-full h-[520px] bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_4" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_4');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // MediaForge Futuristic Interactive 3D Media Processing Engine
+const container = document.currentScript.parentElement;
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+camera.position.set(0, 0, 8.5);
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const redCoreLight = new THREE.PointLight(0xB42A1A, 5, 20);
+redCoreLight.position.set(0, 0, 2);
+scene.add(redCoreLight);
+
+const amberAccentLight = new THREE.PointLight(0xD48B6D, 3.5, 15);
+amberAccentLight.position.set(3, 3, 4);
+scene.add(amberAccentLight);
+
+// Group
+const forgeGroup = new THREE.Group();
+scene.add(forgeGroup);
+
+// 1. Central Prismatic Media Core (Anvil / Octahedral Crystal)
+const coreGeo = new THREE.OctahedronGeometry(1.6, 1);
+const coreMat = new THREE.MeshPhongMaterial({
+  color: 0x1f0b09,
+  emissive: 0x5D170E,
+  specular: 0xD48B6D,
+  shininess: 90,
+  wireframe: false,
+  transparent: true,
+  opacity: 0.88,
+  flatShading: true
+});
+const coreMesh = new THREE.Mesh(coreGeo, coreMat);
+forgeGroup.add(coreMesh);
+
+// Outer Wireframe Cage
+const wireGeo = new THREE.OctahedronGeometry(1.65, 1);
+const wireMat = new THREE.MeshBasicMaterial({
+  color: 0xD48B6D,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.45
+});
+const wireMesh = new THREE.Mesh(wireGeo, wireMat);
+forgeGroup.add(wireMesh);
+
+// 2. Dual Concentric Processing Rings (Gimbal / Media Apertures)
+const ringMat1 = new THREE.MeshBasicMaterial({ color: 0xB42A1A, wireframe: true, transparent: true, opacity: 0.7 });
+const ringGeo1 = new THREE.TorusGeometry(2.4, 0.025, 16, 64);
+const ring1 = new THREE.Mesh(ringGeo1, ringMat1);
+forgeGroup.add(ring1);
+
+const ringMat2 = new THREE.MeshBasicMaterial({ color: 0xD4B6A8, wireframe: true, transparent: true, opacity: 0.5 });
+const ringGeo2 = new THREE.TorusGeometry(2.9, 0.02, 16, 72);
+const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
+ring2.rotation.x = Math.PI * 0.35;
+forgeGroup.add(ring2);
+
+// 3. Floating Media Nodes (Representing MP4, MP3, 4K, ZIP streams)
+const nodeGroup = new THREE.Group();
+forgeGroup.add(nodeGroup);
+
+const nodeGeo = new THREE.BoxGeometry(0.35, 0.35, 0.35);
+const nodeMat = new THREE.MeshPhongMaterial({
+  color: 0xD48B6D,
+  emissive: 0x7A1E12,
+  shininess: 100
+});
+
+const nodes = [];
+const numNodes = 6;
+for (let i = 0; i < numNodes; i++) {
+  const mesh = new THREE.Mesh(nodeGeo, nodeMat);
+  const angle = (i / numNodes) * Math.PI * 2;
+  mesh.position.set(Math.cos(angle) * 3.4, Math.sin(angle) * 3.4, (Math.random() - 0.5) * 1.5);
+  nodeGroup.add(mesh);
+  nodes.push({ mesh, angle, speed: 0.008 + i * 0.002, radius: 3.2 + (i % 2) * 0.4 });
+}
+
+// 4. Data Particle Stream / Embers
+const particleCount = 240;
+const pGeometry = new THREE.BufferGeometry();
+const pPositions = new Float32Array(particleCount * 3);
+const pVelocities = [];
+
+for (let i = 0; i < particleCount * 3; i += 3) {
+  const r = 1.2 + Math.random() * 3.5;
+  const theta = Math.random() * Math.PI * 2;
+  const phi = (Math.random() - 0.5) * Math.PI;
+  pPositions[i] = r * Math.cos(phi) * Math.cos(theta);
+  pPositions[i+1] = r * Math.cos(phi) * Math.sin(theta);
+  pPositions[i+2] = r * Math.sin(phi);
+  pVelocities.push((Math.random() - 0.5) * 0.015, (Math.random() - 0.5) * 0.015, (Math.random() - 0.5) * 0.015);
+}
+
+pGeometry.setAttribute('position', new THREE.BufferAttribute(pPositions, 3));
+const pMaterial = new THREE.PointsMaterial({
+  color: 0xD48B6D,
+  size: 0.055,
+  transparent: true,
+  opacity: 0.85,
+  blending: THREE.AdditiveBlending
+});
+const particles = new THREE.Points(pGeometry, pMaterial);
+forgeGroup.add(particles);
+
+// Mouse tracking
+let targetRotX = 0;
+let targetRotY = 0;
+let mouseX = 0;
+let mouseY = 0;
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+  mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  targetRotY = mouseX * 0.45;
+  targetRotX = mouseY * 0.35;
+});
+
+// Render Loop
+let clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  const t = clock.getElapsedTime();
+
+  // Gentle smooth rotation + mouse parallax
+  forgeGroup.rotation.y += 0.006;
+  forgeGroup.rotation.x += (targetRotX - forgeGroup.rotation.x) * 0.05;
+  forgeGroup.rotation.y += (targetRotY - forgeGroup.rotation.y) * 0.05;
+
+  coreMesh.rotation.y = -t * 0.25;
+  coreMesh.rotation.x = t * 0.15;
+  wireMesh.rotation.y = -t * 0.25;
+  wireMesh.rotation.x = t * 0.15;
+
+  ring1.rotation.z = t * 0.3;
+  ring1.rotation.x = Math.sin(t * 0.5) * 0.3;
+
+  ring2.rotation.y = -t * 0.25;
+  ring2.rotation.z = Math.cos(t * 0.4) * 0.4;
+
+  // Orbiting nodes
+  nodes.forEach((n, idx) => {
+    n.angle += n.speed;
+    n.mesh.position.x = Math.cos(n.angle) * n.radius;
+    n.mesh.position.y = Math.sin(n.angle) * (n.radius * 0.85);
+    n.mesh.position.z = Math.sin(t * 1.5 + idx) * 0.8;
+    n.mesh.rotation.x += 0.02;
+    n.mesh.rotation.y += 0.03;
+  });
+
+  // Pulse core light
+  redCoreLight.intensity = 4.5 + Math.sin(t * 3.0) * 1.2;
+
+  // Particle flutter
+  const pos = pGeometry.attributes.position.array;
+  for (let i = 0; i < particleCount; i++) {
+    pos[i * 3 + 1] += 0.003;
+    if (pos[i * 3 + 1] > 3.5) {
+      pos[i * 3 + 1] = -3.5;
+    }
+  }
+  pGeometry.attributes.position.needsUpdate = true;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+  const w = container.clientWidth || window.innerWidth;
+  const h = container.clientHeight || window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_4 -->
+<!-- Floating Precision Telemetry Badges -->
+<div class="absolute top-6 left-6 px-space-sm py-space-xs bg-surface-container/80 backdrop-blur-md rounded-DEFAULT shadow-lg flex items-center gap-space-xs animate-pulse">
+<span class="material-symbols-outlined text-primary text-[14px]">videocam</span>
+<span class="font-technical-badge text-technical-badge text-on-surface uppercase">4K LOSSLESS [60FPS AV1]</span>
+</div>
+<div class="absolute top-20 right-6 px-space-sm py-space-xs bg-surface-container/80 backdrop-blur-md rounded-DEFAULT shadow-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[14px]">equalizer</span>
+<span class="font-technical-badge text-technical-badge text-on-surface uppercase">AUDIO MASTER [FLAC 24-BIT]</span>
+</div>
+<div class="absolute bottom-20 left-6 px-space-sm py-space-xs bg-surface-container/80 backdrop-blur-md rounded-DEFAULT shadow-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[14px]">folder_zip</span>
+<span class="font-technical-badge text-technical-badge text-on-surface uppercase">PLAYLIST ARCHIVE [ZIP ENGINE]</span>
+</div>
+<div class="absolute bottom-6 right-6 px-space-sm py-space-xs bg-surface-container-high/90 backdrop-blur-md rounded-DEFAULT shadow-lg flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-technical-badge text-technical-badge text-primary uppercase">ZERO-LATENCY TRANSCODE</span>
+</div>
+<!-- Brand Emblem Micro Overlay -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+<img alt="MediaForge Emblem" class="w-4 h-4 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wv7DFLlgy8UNIV1JdhJOCnHwRoJ2AewJxK4ZmdeWcdoBiQel9JptYc83zDE5TMWQW-dP4UInjIaOL7Ej6PvfcZ4Kb-ETITPndawM9UqtJujcAq1WIV2ED9FV_b67z96a6uv6y8oxpLaolFTBL9wwv8mgwzh2sWIP0eI57PflfNxFfQhwCJJjj7OZe8N8bgG9jQt6fZd1IAo3QsMOga3kcMqe5XG3zEDZYurlWFdXTOJy-DQK-5PRiw8VI"/>
+<span class="font-technical-badge text-technical-badge text-outline">MEDIAFORGE INDUSTRIAL CORE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="w-full flex justify-center items-center mt-space-3xl">
+<a class="flex flex-col items-center gap-space-xs text-on-surface-variant hover:text-on-surface transition-colors" href="#intake-terminal">
+<span class="font-technical-badge text-technical-badge uppercase tracking-widest">SCROLL TO FORGE ↓</span>
+<span class="w-0.5 h-6 bg-gradient-to-b from-primary to-transparent animate-pulse"></span>
+</a>
+</div>
+</section>
+<!-- SECTION 2: PRIMARY INTAKE & FORGING STATION -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-3xl bg-surface-container-lowest/80" id="intake-terminal">
+<div class="max-w-[1536px] mx-auto flex flex-col gap-space-2xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">TRANSACTION MATRIX 01</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mt-space-2xs">From link to file.</h2>
+</div>
+<div class="font-technical-data text-technical-data text-on-surface-variant flex items-center gap-space-sm bg-surface-container px-space-md py-space-xs rounded-DEFAULT">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>INGEST READY // INPUT PROTOCOL ACTIVE</span>
+</div>
+</div>
+<!-- Main Forging Workspace Panel -->
+<div class="bg-surface-container-low/90 backdrop-blur-xl p-space-lg md:p-space-2xl rounded-DEFAULT shadow-2xl flex flex-col gap-space-xl relative overflow-hidden">
+<!-- STEP 01: Platform Selection Segment Rail -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-on-surface uppercase tracking-wider">STEP 01 // SELECT INGEST PROTOCOL</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">AUTO-DETECT ENABLED</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-space-sm" id="platform-selector">
+<button class="platform-chip active group p-space-md bg-surface-container-high rounded-DEFAULT text-left transition-all duration-150 flex flex-col justify-between h-24 hover:bg-surface-bright shadow-sm" data-platform="youtube" type="button">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_display</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary status-dot"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-none">YouTube</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant mt-1 block">4K / PLAYLISTS</span>
+</div>
+</button>
+<button class="platform-chip group p-space-md bg-surface-container rounded-DEFAULT text-left transition-all duration-150 flex flex-col justify-between h-24 hover:bg-surface-container-high" data-platform="spotify" type="button">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-secondary">music_note</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent status-dot"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-none">Spotify</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant mt-1 block">TRACKS &amp; ALBUMS</span>
+</div>
+</button>
+<button class="platform-chip group p-space-md bg-surface-container rounded-DEFAULT text-left transition-all duration-150 flex flex-col justify-between h-24 hover:bg-surface-container-high" data-platform="vimeo" type="button">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-secondary">movie</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent status-dot"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-none">Vimeo Pro</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant mt-1 block">DCI 4K RAW</span>
+</div>
+</button>
+<button class="platform-chip group p-space-md bg-surface-container rounded-DEFAULT text-left transition-all duration-150 flex flex-col justify-between h-24 hover:bg-surface-container-high" data-platform="soundcloud" type="button">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-secondary">graphic_eq</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent status-dot"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-none">SoundCloud</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant mt-1 block">LOSSLESS FLAC</span>
+</div>
+</button>
+<button class="platform-chip group p-space-md bg-surface-container rounded-DEFAULT text-left transition-all duration-150 flex flex-col justify-between h-24 hover:bg-surface-container-high" data-platform="x" type="button">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-secondary">alternate_email</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent status-dot"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-none">X / Media</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant mt-1 block">VIDEO CLIPS</span>
+</div>
+</button>
+<button class="platform-chip group p-space-md bg-surface-container rounded-DEFAULT text-left transition-all duration-150 flex flex-col justify-between h-24 hover:bg-surface-container-high" data-platform="direct" type="button">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-secondary">link</span>
+<span class="w-1.5 h-1.5 rounded-full bg-transparent status-dot"></span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block leading-none">Direct Stream</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant mt-1 block">HLS / M3U8</span>
+</div>
+</button>
+</div>
+</div>
+<!-- STEP 02: URL Intake Console Terminal -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-technical-badge text-technical-badge text-on-surface uppercase tracking-wider flex items-center justify-between" for="media-url-input">
+<span>STEP 02 // MEDIA / PLAYLIST TARGET INGESTION</span>
+<span class="text-secondary font-mono">ENCRYPTION: SECURE TLS 1.3</span>
+</label>
+<div class="flex flex-col sm:flex-row gap-space-xs bg-surface-container-lowest p-space-xs rounded-DEFAULT shadow-inner focus-within:bg-surface-container-high transition-colors">
+<div class="flex items-center px-space-md text-primary">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<input class="w-full bg-transparent py-space-md px-space-sm font-technical-data text-technical-data text-on-surface placeholder:text-outline focus:outline-none" id="media-url-input" placeholder="Paste your media or playlist URL (e.g., https://youtube.com/playlist?list=...)" type="text" value="https://youtube.com/playlist?list=PL_SOLARIS_EXPEDITION_4K"/>
+<button class="px-space-xl py-space-md bg-surface-container-high text-on-surface hover:bg-primary-container hover:text-on-primary-container font-technical-data text-technical-data uppercase transition-all rounded-DEFAULT flex items-center justify-center gap-space-xs shrink-0" id="analyze-button">
+<span id="analyze-btn-text">Analyze URL</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- STEP 03: Format & Codec Hardware Matrix -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-on-surface uppercase tracking-wider">STEP 03 // SELECT EXPORT ENCODING MATRIX</span>
+<span class="font-technical-badge text-technical-badge text-secondary">AUDIO &amp; VIDEO EXTRACTORS ARMED</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-sm" id="format-selector">
+<button class="format-badge active p-space-md bg-surface-container-high rounded-DEFAULT text-left transition-all hover:bg-surface-bright flex flex-col justify-between" data-format="mp4" type="button">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">MP4</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-primary-container text-on-primary-container rounded-DEFAULT">4K UHD</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">2160p Master HEVC</span>
+</button>
+<button class="format-badge p-space-md bg-surface-container rounded-DEFAULT text-left transition-all hover:bg-surface-container-high flex flex-col justify-between" data-format="mp3" type="button">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">MP3</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">320 KBPS</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Constant Bitrate HQ</span>
+</button>
+<button class="format-badge p-space-md bg-surface-container rounded-DEFAULT text-left transition-all hover:bg-surface-container-high flex flex-col justify-between" data-format="webm" type="button">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">WEBM</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">AV1 CODEC</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">High Efficiency Master</span>
+</button>
+<button class="format-badge p-space-md bg-surface-container rounded-DEFAULT text-left transition-all hover:bg-surface-container-high flex flex-col justify-between" data-format="wav" type="button">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">WAV</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">96 KHZ</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Lossless Uncompressed</span>
+</button>
+<button class="format-badge p-space-md bg-surface-container rounded-DEFAULT text-left transition-all hover:bg-surface-container-high flex flex-col justify-between" data-format="m4a" type="button">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">M4A</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">AAC 256K</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Apple Spatial Pristine</span>
+</button>
+<button class="format-badge p-space-md bg-surface-container rounded-DEFAULT text-left transition-all hover:bg-surface-container-high flex flex-col justify-between" data-format="zip" type="button">
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">ZIP</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">ALL-IN-1</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Batch Harvest Archive</span>
+</button>
+</div>
+</div>
+<!-- STEP 04: Active Inspection & Forging Card Preview -->
+<div class="bg-surface-container-lowest p-space-lg rounded-DEFAULT flex flex-col lg:flex-row items-center justify-between gap-space-lg shadow-md">
+<div class="flex items-center gap-space-md w-full lg:w-auto">
+<div class="relative w-24 h-16 bg-surface-container-high rounded-DEFAULT overflow-hidden shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[32px]">play_circle</span>
+<div class="absolute bottom-1 right-1 font-technical-badge text-technical-badge bg-surface-container-lowest/90 px-1 rounded-DEFAULT text-on-surface">04:32</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-technical-badge text-technical-badge text-secondary uppercase tracking-widest">MEDIA DETECTED // STREAM READY</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate" id="detected-title">Solaris_Cinematic_Audio_Session_Ep4.mp4</h3>
+<div class="flex flex-wrap items-center gap-space-md text-on-surface-variant font-technical-data text-technical-data mt-space-2xs">
+<span>RES: 3840×2160</span>
+<span>•</span>
+<span>FPS: 59.94</span>
+<span>•</span>
+<span>BITRATE: 18.4 MBPS</span>
+<span>•</span>
+<span class="text-secondary">SIZE: 284.6 MB</span>
+</div>
+</div>
+</div>
+<!-- Action CTA / Live Forge Simulation -->
+<div class="w-full lg:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md shrink-0">
+<!-- Progress indicator ring / tracker -->
+<div class="hidden items-center gap-space-sm bg-surface-container px-space-md py-space-sm rounded-DEFAULT" id="progress-container">
+<svg class="w-6 h-6 animate-spin text-primary" fill="none" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor"></path>
+</svg>
+<div class="flex flex-col">
+<span class="font-technical-badge text-technical-badge text-on-surface uppercase" id="transcode-status">PROCESSING BATCH</span>
+<span class="font-technical-data text-technical-data text-secondary" id="transcode-percent">0%</span>
+</div>
+</div>
+<button class="px-space-2xl py-space-md bg-primary-container text-on-primary-container font-technical-data text-technical-data uppercase tracking-wider rounded-DEFAULT shadow-[0_0_20px_rgba(180,42,26,0.45)] hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-space-sm" id="start-forge-btn">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span id="forge-btn-label">[ START FORGING ]</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: MEDIA PROCESSING PIPELINE -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-4xl" id="pipeline-section">
+<div class="max-w-[1536px] mx-auto flex flex-col gap-space-2xl">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">ARCHITECTURE // ZERO BUFFERING</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Forge your media.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Industrial ingestion through distributed transcode blades. Stream data is demuxed, analyzed, converted, and assembled concurrently at machine limits.</p>
+</div>
+<!-- Pipeline Steps Graphic Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-space-sm relative">
+<!-- Stage 1 -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col justify-between h-56 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="font-technical-badge text-technical-badge text-primary">01 / INGEST</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">cloud_download</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">URL Ingestion</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Bypasses platform rate limiters via distributed dynamic IP rotators.</p>
+</div>
+<div class="font-technical-badge text-technical-badge text-outline">HTTP 302 DIRECT PIPED</div>
+</div>
+<!-- Stage 2 -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col justify-between h-56 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="font-technical-badge text-technical-badge text-primary">02 / DECODE</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">troubleshoot</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Deep Analysis</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Demuxes audio streams, bitrates, chromatic gamuts, and chapter markers.</p>
+</div>
+<div class="font-technical-badge text-technical-badge text-outline">FFMPEG HARDWARE BLADE</div>
+</div>
+<!-- Stage 3 -->
+<div class="bg-surface-container-high p-space-md rounded-DEFAULT flex flex-col justify-between h-56 shadow-md">
+<div class="flex justify-between items-start">
+<span class="font-technical-badge text-technical-badge text-primary-container">03 / FORGE</span>
+<span class="material-symbols-outlined text-primary text-[20px]">developer_board</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Adaptive Transcode</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">AV1, HEVC, or lossless audio PCM rendering with hardware GPU threads.</p>
+</div>
+<div class="font-technical-badge text-technical-badge text-primary">CUDA CLUSTER PARALLEL</div>
+</div>
+<!-- Stage 4 -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col justify-between h-56 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="font-technical-badge text-technical-badge text-primary">04 / ENRICH</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">id_card</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Metadata Injection</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">High-res artwork embedding, ID3 tag normalization, and chapter indexing.</p>
+</div>
+<div class="font-technical-badge text-technical-badge text-outline">ID3V2.4 &amp; ATOM WRITING</div>
+</div>
+<!-- Stage 5 -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col justify-between h-56 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="font-technical-badge text-technical-badge text-primary">05 / BUNDLE</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">archive</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Batch Packaging</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Organizes tracks into multi-disc folder hierarchies with master ZIP archive.</p>
+</div>
+<div class="font-technical-badge text-technical-badge text-outline">STORE / DEFLATE LEVEL 9</div>
+</div>
+<!-- Stage 6 -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex flex-col justify-between h-56 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start">
+<span class="font-technical-badge text-technical-badge text-primary">06 / EGRESS</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">CDN Egress</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-2xs">Chunked parallel download streams from the edge node closest to you.</p>
+</div>
+<div class="font-technical-badge text-technical-badge text-outline">ANYCAST 100G CDN</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: FEATURE MATRIX (MASONRY/BENTO) -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-3xl bg-surface-container-lowest">
+<div class="max-w-[1536px] mx-auto flex flex-col gap-space-2xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">CAPABILITIES MATRIX</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">Built for every kind of media.</h2>
+</div>
+<span class="font-technical-badge text-technical-badge text-outline">SPECIFICATION DOCUMENT: ARCHIVE-SPEC-2026</span>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Card 1: Multi-platform -->
+<div class="p-space-xl bg-surface-container-low rounded-DEFAULT flex flex-col justify-between gap-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-secondary uppercase">01 / PLATFORM UNIVERSALITY</span>
+<span class="material-symbols-outlined text-primary">hub</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-md">Multi-Platform Extraction</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              Universal ingestion adapters tailored to over 40 mainstream audio, video, and live-streaming backends. No client throttling, no CAPTCHA interruptions.
+            </p>
+</div>
+<div class="flex flex-wrap gap-space-xs pt-space-md">
+<span class="font-technical-badge text-technical-badge bg-surface-container px-space-xs py-space-2xs text-on-surface-variant">YOUTUBE 4K</span>
+<span class="font-technical-badge text-technical-badge bg-surface-container px-space-xs py-space-2xs text-on-surface-variant">SPOTIFY 320K</span>
+<span class="font-technical-badge text-technical-badge bg-surface-container px-space-xs py-space-2xs text-on-surface-variant">SOUNDCLOUD FLAC</span>
+<span class="font-technical-badge text-technical-badge bg-surface-container px-space-xs py-space-2xs text-on-surface-variant">VIMEO MASTER</span>
+</div>
+</div>
+<!-- Card 2: Lossless Fidelity -->
+<div class="p-space-xl bg-surface-container-high rounded-DEFAULT flex flex-col justify-between gap-space-lg shadow-lg">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-primary uppercase">02 / UNCOMPROMISED BITRATE</span>
+<span class="material-symbols-outlined text-primary">graphic_eq</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-md">Lossless Audio &amp; Color Gamuts</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              Extract master stereo streams without destructive re-compression. Retains DCI-P3 color profiles, Rec.709, and HDR10 metadata in high-efficiency containers.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-DEFAULT flex items-center justify-between font-technical-badge text-technical-badge text-secondary">
+<span>BIT DEPTH: 24-BIT / 96KHZ</span>
+<span>DYNAMIC RANGE: &gt;112 DB</span>
+</div>
+</div>
+<!-- Card 3: Complete Playlist Harvest -->
+<div class="p-space-xl bg-surface-container-low rounded-DEFAULT flex flex-col justify-between gap-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-secondary uppercase">03 / PLAYLIST INGESTION</span>
+<span class="material-symbols-outlined text-tertiary">queue_music</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-md">Complete Playlist Harvest</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              Feed an entire YouTube, Spotify, or SoundCloud album link. The engine automatically indexes every single item, sequences filenames, and downloads all in one bundle.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-technical-data text-technical-data">
+<span class="material-symbols-outlined text-[16px] text-secondary">done_all</span>
+<span>Up to 500 tracks per batch job</span>
+</div>
+</div>
+<!-- Card 4: Concurrent Batch Pipeline -->
+<div class="p-space-xl bg-surface-container-low rounded-DEFAULT flex flex-col justify-between gap-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-secondary uppercase">04 / ZERO HOST IMPACT</span>
+<span class="material-symbols-outlined text-primary">memory</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-md">Cloud-Driven Multi-Thread</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              All transcoding work runs in our thermal-stabilized server blades. Your client CPU never throttles, heats up, or consumes battery power during intensive conversions.
+            </p>
+</div>
+<div class="font-technical-badge text-technical-badge text-outline">DISTRIBUTED KUBERNETES PODS</div>
+</div>
+<!-- Card 5: Granular Format Governance -->
+<div class="p-space-xl bg-surface-container-low rounded-DEFAULT flex flex-col justify-between gap-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-secondary uppercase">05 / FINE ARCHITECTURE</span>
+<span class="material-symbols-outlined text-secondary">tune</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-md">Granular Format Governance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              Tweak container specifics before starting: switch between AAC, MP3, OPUS, and FLAC, or force DCI 4K resolution bounds and constant bitrate targets.
+            </p>
+</div>
+<div class="font-technical-badge text-technical-badge text-secondary">CRF 16 • PRESET VERYSLOW • VBR/CBR</div>
+</div>
+<!-- Card 6: One-Click ZIP Archiving -->
+<div class="p-space-xl bg-surface-container-low rounded-DEFAULT flex flex-col justify-between gap-space-lg shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-technical-badge text-technical-badge text-secondary uppercase">06 / PACKAGING APPARATUS</span>
+<span class="material-symbols-outlined text-tertiary">folder_zip</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-space-md">One-Click ZIP Archiving</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+              No need to accept dozens of individual browser download prompts. Everything packages into a cleanly structured single archive with folder structures intact.
+            </p>
+</div>
+<div class="font-technical-badge text-technical-badge text-primary">STREAMED ZIP ON THE FLY</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: PLAYLIST & BATCH FORGE DECK -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-4xl">
+<div class="max-w-[1536px] mx-auto flex flex-col gap-space-2xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">BATCH FORGING STATION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mt-space-2xs">One playlist. One download.</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-lg py-space-xs bg-primary-container text-on-primary-container font-technical-data text-technical-data uppercase rounded-DEFAULT shadow-[0_0_16px_rgba(180,42,26,0.4)] hover:bg-primary hover:text-on-primary transition-all flex items-center gap-space-xs" id="download-all-zip-btn">
+<span class="material-symbols-outlined text-[16px]">folder_zip</span>
+<span>Download Complete ZIP • 248.4 MB</span>
+</button>
+</div>
+</div>
+<!-- Studio Playlist Visualizer Deck -->
+<div class="bg-surface-container-low rounded-DEFAULT p-space-lg md:p-space-xl flex flex-col gap-space-md shadow-xl">
+<!-- Playlist Meta Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md bg-surface-container-lowest/50 p-space-md rounded-DEFAULT gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 bg-primary-container rounded-DEFAULT flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[24px]">album</span>
+</div>
+<div>
+<div class="font-technical-badge text-technical-badge text-secondary uppercase">DETECTED ALBUM // YOUTUBE MUSIC BUNDLE</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Late Night Sessions Vol. IV (Original Audio Master)</h3>
+</div>
+</div>
+<div class="flex items-center gap-space-lg font-technical-data text-technical-data text-on-surface-variant">
+<span>TRACKS: <strong class="text-on-surface">12 DETECTED</strong></span>
+<span>TOTAL DURATION: <strong class="text-on-surface">48:16</strong></span>
+<span>EST. SIZE: <strong class="text-secondary">248.4 MB</strong></span>
+</div>
+</div>
+<!-- Tracklist Table -->
+<div class="flex flex-col gap-space-xs" id="tracklist-deck">
+<!-- Track 01 -->
+<div class="track-row p-space-sm bg-surface-container rounded-DEFAULT flex items-center justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="font-technical-data text-technical-data text-outline w-6">01</span>
+<span class="material-symbols-outlined text-primary text-[18px]">play_arrow</span>
+<div class="min-w-0">
+<span class="font-body-md text-body-md text-on-surface truncate block">01 - Stellar Horizon [Master Ambient Mix]</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">FLAC 24-BIT // 48.0 KHZ</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg shrink-0">
+<!-- Mini Waveform Visualizer -->
+<div class="hidden md:flex items-center gap-1 h-5">
+<span class="w-0.5 h-3 bg-secondary"></span>
+<span class="w-0.5 h-5 bg-primary"></span>
+<span class="w-0.5 h-2 bg-secondary"></span>
+<span class="w-0.5 h-4 bg-primary"></span>
+<span class="w-0.5 h-1 bg-outline"></span>
+<span class="w-0.5 h-3 bg-secondary"></span>
+</div>
+<span class="font-technical-data text-technical-data text-on-surface-variant">04:12</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">24.2 MB</span>
+<button aria-label="Download Track 1" class="w-8 h-8 rounded-DEFAULT bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+<!-- Track 02 -->
+<div class="track-row p-space-sm bg-surface-container rounded-DEFAULT flex items-center justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="font-technical-data text-technical-data text-outline w-6">02</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">play_arrow</span>
+<div class="min-w-0">
+<span class="font-body-md text-body-md text-on-surface truncate block">02 - Radiant Transit (Synthetic Sub-Bass Dub)</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">FLAC 24-BIT // 48.0 KHZ</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg shrink-0">
+<div class="hidden md:flex items-center gap-1 h-5">
+<span class="w-0.5 h-2 bg-outline"></span>
+<span class="w-0.5 h-4 bg-secondary"></span>
+<span class="w-0.5 h-5 bg-primary"></span>
+<span class="w-0.5 h-3 bg-secondary"></span>
+<span class="w-0.5 h-1 bg-outline"></span>
+</div>
+<span class="font-technical-data text-technical-data text-on-surface-variant">03:45</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">21.8 MB</span>
+<button aria-label="Download Track 2" class="w-8 h-8 rounded-DEFAULT bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+<!-- Track 03 -->
+<div class="track-row p-space-sm bg-surface-container rounded-DEFAULT flex items-center justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="font-technical-data text-technical-data text-outline w-6">03</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">play_arrow</span>
+<div class="min-w-0">
+<span class="font-body-md text-body-md text-on-surface truncate block">03 - Thermal Forge (Overclocked Reprise)</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">FLAC 24-BIT // 48.0 KHZ</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg shrink-0">
+<div class="hidden md:flex items-center gap-1 h-5">
+<span class="w-0.5 h-4 bg-secondary"></span>
+<span class="w-0.5 h-5 bg-primary"></span>
+<span class="w-0.5 h-4 bg-secondary"></span>
+<span class="w-0.5 h-2 bg-outline"></span>
+<span class="w-0.5 h-1 bg-outline"></span>
+</div>
+<span class="font-technical-data text-technical-data text-on-surface-variant">05:20</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">31.4 MB</span>
+<button aria-label="Download Track 3" class="w-8 h-8 rounded-DEFAULT bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+<!-- Track 04 -->
+<div class="track-row p-space-sm bg-surface-container rounded-DEFAULT flex items-center justify-between hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<span class="font-technical-data text-technical-data text-outline w-6">04</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">play_arrow</span>
+<div class="min-w-0">
+<span class="font-body-md text-body-md text-on-surface truncate block">04 - Deep Frequency Resonance</span>
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">FLAC 24-BIT // 48.0 KHZ</span>
+</div>
+</div>
+<div class="flex items-center gap-space-lg shrink-0">
+<div class="hidden md:flex items-center gap-1 h-5">
+<span class="w-0.5 h-1 bg-outline"></span>
+<span class="w-0.5 h-3 bg-secondary"></span>
+<span class="w-0.5 h-5 bg-primary"></span>
+<span class="w-0.5 h-3 bg-secondary"></span>
+</div>
+<span class="font-technical-data text-technical-data text-on-surface-variant">03:59</span>
+<span class="font-technical-badge text-technical-badge px-space-xs py-space-2xs bg-surface-container-lowest text-secondary rounded-DEFAULT">23.1 MB</span>
+<button aria-label="Download Track 4" class="w-8 h-8 rounded-DEFAULT bg-surface-container-lowest hover:bg-primary-container hover:text-on-primary-container text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Pagination / Overflow note -->
+<div class="flex items-center justify-between pt-space-sm font-technical-data text-technical-data text-on-surface-variant">
+<span>SHOWING 4 OF 12 TRACKS</span>
+<span class="text-secondary cursor-pointer hover:underline">+ VIEW REMAINING 8 TRACKS IN QUEUE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: DEEP MEDIA ANALYSIS SECTION -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-4xl bg-surface-container-lowest/90">
+<div class="max-w-[1536px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
+<!-- Telemetry Readout Terminal -->
+<div class="lg:col-span-6 flex flex-col gap-space-lg">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">INSPECTION INSTRUMENTATION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mt-space-2xs">Know your media before you download it.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">Real-time deep spectral analysis reads stream bit allocations, dynamic frequency limits, and frame quantization before triggering transcode.</p>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-DEFAULT flex flex-col gap-space-sm shadow-inner">
+<div class="flex justify-between items-center pb-space-xs">
+<span class="font-technical-badge text-technical-badge text-primary uppercase">STREAM SIGNATURE READOUT</span>
+<span class="font-technical-badge text-technical-badge text-outline">HASH: #8F0A2B99C</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm font-technical-data text-technical-data">
+<div class="bg-surface-container p-space-sm rounded-DEFAULT flex flex-col">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">RESOLUTION</span>
+<span class="text-on-surface font-semibold mt-1">3840 × 2160 (16:9 DCI)</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-DEFAULT flex flex-col">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">VIDEO CODEC</span>
+<span class="text-on-surface font-semibold mt-1">HEVC / H.265 MAIN 10</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-DEFAULT flex flex-col">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">AUDIO ENCODING</span>
+<span class="text-on-surface font-semibold mt-1">AAC LC / DUAL STEREO</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-DEFAULT flex flex-col">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">BITRATE ARCHITECTURE</span>
+<span class="text-secondary font-semibold mt-1">18.4 MBPS CONSTANT</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-DEFAULT flex flex-col">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">COLOR GAMUT</span>
+<span class="text-on-surface font-semibold mt-1">DCI-P3 HDR10 PROFILE</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-DEFAULT flex flex-col">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant">COMPATIBLE EXPORTS</span>
+<span class="text-primary font-semibold mt-1">6 HARDWARE BLADES READY</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Audio Waveform Graphic Panel -->
+<div class="lg:col-span-6 bg-surface-container-high p-space-lg rounded-DEFAULT flex flex-col justify-between h-[420px] shadow-2xl relative overflow-hidden">
+<div class="flex justify-between items-center z-10">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-technical-badge text-technical-badge text-on-surface uppercase">SPECTRUM FFT LIVE READOUT</span>
+</div>
+<span class="font-technical-badge text-technical-badge text-secondary">20 HZ - 22.05 KHZ MASTER RANGE</span>
+</div>
+<!-- Inline SVG Waveform Visualizer Graphic -->
+<div class="my-auto w-full flex items-center justify-center">
+<svg class="w-full h-36 text-primary" fill="currentColor" viewbox="0 0 400 120">
+<!-- Simulated Audio Spectral Peaks -->
+<rect height="10" opacity="0.3" rx="1" width="4" x="10" y="55"></rect>
+<rect height="30" opacity="0.5" rx="1" width="4" x="20" y="45"></rect>
+<rect height="60" opacity="0.7" rx="1" width="4" x="30" y="30"></rect>
+<rect height="80" rx="1" width="4" x="40" y="20"></rect>
+<rect height="100" rx="1" width="4" x="50" y="10"></rect>
+<rect height="70" rx="1" width="4" x="60" y="25"></rect>
+<rect height="40" opacity="0.8" rx="1" width="4" x="70" y="40"></rect>
+<rect height="90" rx="1" width="4" x="80" y="15"></rect>
+<rect height="50" opacity="0.9" rx="1" width="4" x="90" y="35"></rect>
+<rect height="104" rx="1" width="4" x="100" y="8"></rect>
+<rect height="76" rx="1" width="4" x="110" y="22"></rect>
+<rect height="24" opacity="0.6" rx="1" width="4" x="120" y="48"></rect>
+<rect height="84" rx="1" width="4" x="130" y="18"></rect>
+<rect height="110" rx="1" width="4" x="140" y="5"></rect>
+<rect height="64" rx="1" width="4" x="150" y="28"></rect>
+<rect height="44" opacity="0.8" rx="1" width="4" x="160" y="38"></rect>
+<rect height="96" rx="1" width="4" x="170" y="12"></rect>
+<rect height="116" rx="1" width="4" x="180" y="2"></rect>
+<rect height="80" rx="1" width="4" x="190" y="20"></rect>
+<rect height="36" opacity="0.7" rx="1" width="4" x="200" y="42"></rect>
+<rect height="88" rx="1" width="4" x="210" y="16"></rect>
+<rect height="68" rx="1" width="4" x="220" y="26"></rect>
+<rect height="20" opacity="0.5" rx="1" width="4" x="230" y="50"></rect>
+<rect height="92" rx="1" width="4" x="240" y="14"></rect>
+<rect height="56" rx="1" width="4" x="250" y="32"></rect>
+<rect height="108" rx="1" width="4" x="260" y="6"></rect>
+<rect height="72" rx="1" width="4" x="270" y="24"></rect>
+<rect height="32" opacity="0.7" rx="1" width="4" x="280" y="44"></rect>
+<rect height="82" rx="1" width="4" x="290" y="19"></rect>
+<rect height="48" opacity="0.9" rx="1" width="4" x="300" y="36"></rect>
+<rect height="98" rx="1" width="4" x="310" y="11"></rect>
+<rect height="62" rx="1" width="4" x="320" y="29"></rect>
+<rect height="16" opacity="0.4" rx="1" width="4" x="330" y="52"></rect>
+<rect height="86" rx="1" width="4" x="340" y="17"></rect>
+<rect height="38" opacity="0.8" rx="1" width="4" x="350" y="41"></rect>
+<rect height="74" rx="1" width="4" x="360" y="23"></rect>
+<rect height="26" opacity="0.6" rx="1" width="4" x="370" y="47"></rect>
+<rect height="4" opacity="0.2" rx="1" width="4" x="380" y="58"></rect>
+</svg>
+</div>
+<!-- Waveform Metrics Bar -->
+<div class="flex justify-between items-center font-technical-badge text-technical-badge text-on-surface-variant border-t border-outline-variant/30 pt-space-xs z-10">
+<span>PEAK: -0.1 DBFS</span>
+<span>RMS: -14.2 LUFS</span>
+<span>CREST FACTOR: 11.4 DB</span>
+<span class="text-secondary">TRUE PEAK SAFE</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: CINEMATIC SPEED SHOWCASE -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-4xl overflow-hidden">
+<div class="max-w-[1536px] mx-auto bg-surface-container-high rounded-DEFAULT p-space-2xl md:p-space-4xl flex flex-col items-center justify-center text-center relative shadow-2xl">
+<!-- Backdrop Ambient Warmth -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/20 via-transparent to-secondary-container/20 pointer-events-none"></div>
+<span class="font-technical-badge text-technical-badge text-secondary uppercase tracking-widest z-10">INDUSTRIAL TRANSCODE ARCHITECTURE</span>
+<h2 class="font-display-hero text-display-hero uppercase tracking-tight text-on-surface max-w-3xl mt-space-md z-10 leading-tight">
+        Media should move at your speed.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-space-lg z-10">
+        "Experience the engine built for archiving the digital soundscape with zero client compromise."
+      </p>
+<div class="mt-space-2xl z-10 flex flex-wrap items-center justify-center gap-space-md">
+<a class="px-space-xl py-space-md bg-primary-container text-on-primary-container font-technical-data text-technical-data uppercase tracking-wider rounded-DEFAULT shadow-[0_0_24px_rgba(180,42,26,0.6)] hover:bg-primary hover:text-on-primary transition-all" href="#intake-terminal">
+          [ Enter Forging Console ]
+        </a>
+</div>
+</div>
+</section>
+<!-- SECTION 8: TECHNICAL SPECIFICATIONS GRID -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-3xl bg-surface-container-lowest">
+<div class="max-w-[1536px] mx-auto flex flex-col gap-space-2xl">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">INFRASTRUCTURE SPECIFICATION</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mt-space-2xs">Engineered for media.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md font-technical-data text-technical-data">
+<div class="bg-surface-container-low p-space-lg rounded-DEFAULT flex flex-col gap-space-sm">
+<span class="font-technical-badge text-technical-badge text-primary uppercase">CONTAINER ENGINE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Video Codecs</span>
+<ul class="text-on-surface-variant space-y-1 mt-space-xs font-body-sm text-body-sm">
+<li>• AV1 (libsvtav1 / Main Profile)</li>
+<li>• H.265 / HEVC (NVENC accelerated)</li>
+<li>• H.264 / AVC (High Profile Level 5.2)</li>
+<li>• VP9 High Bitrate Mode</li>
+<li>• ProRes 422 HQ (Direct Egress)</li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-DEFAULT flex flex-col gap-space-sm">
+<span class="font-technical-badge text-technical-badge text-secondary uppercase">ACOUSTIC PIPELINE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Audio Standards</span>
+<ul class="text-on-surface-variant space-y-1 mt-space-xs font-body-sm text-body-sm">
+<li>• Lossless FLAC (24-bit / 96kHz)</li>
+<li>• Uncompressed PCM WAV (Studio Master)</li>
+<li>• MP3 CBR 320 kbps (LAME 3.100)</li>
+<li>• AAC-LC / HE-AAC v2 (Apple Spec)</li>
+<li>• OPUS Vorbis (Low Latency Voice)</li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-DEFAULT flex flex-col gap-space-sm">
+<span class="font-technical-badge text-technical-badge text-tertiary uppercase">NETWORK SPEED</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Edge Delivery</span>
+<ul class="text-on-surface-variant space-y-1 mt-space-xs font-body-sm text-body-sm">
+<li>• Multi-part chunked CDN streaming</li>
+<li>• Anycast Edge Ingestion (14.2ms)</li>
+<li>• HTTP/3 &amp; QUIC protocol transport</li>
+<li>• Auto-resuming interrupted downloads</li>
+<li>• Uncapped bandwidth pipes</li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-DEFAULT flex flex-col gap-space-sm">
+<span class="font-technical-badge text-technical-badge text-primary uppercase">PRIVACY PROTOCOL</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Security Core</span>
+<ul class="text-on-surface-variant space-y-1 mt-space-xs font-body-sm text-body-sm">
+<li>• Zero log policy on ingested URLs</li>
+<li>• Volatile RAM processing (No disk persistence)</li>
+<li>• 1-Hour automated buffer wiping</li>
+<li>• TLS 1.3 Strict HTTPS everywhere</li>
+<li>• Fully anonymous session handles</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: METRIC TELEMETRY & ACTIVITY STATS -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-3xl">
+<div class="max-w-[1536px] mx-auto flex flex-col gap-space-2xl">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">LIVE THROUGHPUT</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight mt-space-2xs">Media, in numbers.</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-high p-space-xl rounded-DEFAULT flex flex-col shadow-md">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant uppercase">FILES TRANSCODED</span>
+<span class="font-display-hero text-display-hero text-on-surface mt-space-xs tracking-tight">14.8M+</span>
+<span class="font-technical-data text-technical-data text-secondary mt-space-xs">+124k files today</span>
+</div>
+<div class="bg-surface-container-high p-space-xl rounded-DEFAULT flex flex-col shadow-md">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant uppercase">SUCCESSFUL DOWNLOADS</span>
+<span class="font-display-hero text-display-hero text-primary mt-space-xs tracking-tight">5.2M+</span>
+<span class="font-technical-data text-technical-data text-primary mt-space-xs">99.98% delivery rate</span>
+</div>
+<div class="bg-surface-container-high p-space-xl rounded-DEFAULT flex flex-col shadow-md">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant uppercase">PLAYLISTS BUNDLED</span>
+<span class="font-display-hero text-display-hero text-on-surface mt-space-xs tracking-tight">940K+</span>
+<span class="font-technical-data text-technical-data text-secondary mt-space-xs">Avg. 22 tracks/pack</span>
+</div>
+<div class="bg-surface-container-high p-space-xl rounded-DEFAULT flex flex-col shadow-md">
+<span class="font-technical-badge text-technical-badge text-on-surface-variant uppercase">ENGINE UPTIME</span>
+<span class="font-display-hero text-display-hero text-tertiary mt-space-xs tracking-tight">99.94%</span>
+<span class="font-technical-data text-technical-data text-outline mt-space-xs">Global cluster online</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 10: MONUMENTAL FINAL CTA -->
+<section class="relative w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-4xl mb-space-2xl">
+<div class="max-w-[1536px] mx-auto bg-gradient-to-b from-surface-container to-surface-container-lowest p-space-2xl md:p-space-4xl rounded-DEFAULT flex flex-col items-center justify-center text-center relative overflow-hidden shadow-2xl">
+<!-- Brand Emblem Watermark Accent -->
+<img alt="MediaForge Emblem" class="w-16 h-16 object-contain mb-space-md opacity-80" src="https://lh3.googleusercontent.com/aida/AEtjO1Wv7DFLlgy8UNIV1JdhJOCnHwRoJ2AewJxK4ZmdeWcdoBiQel9JptYc83zDE5TMWQW-dP4UInjIaOL7Ej6PvfcZ4Kb-ETITPndawM9UqtJujcAq1WIV2ED9FV_b67z96a6uv6y8oxpLaolFTBL9wwv8mgwzh2sWIP0eI57PflfNxFfQhwCJJjj7OZe8N8bgG9jQt6fZd1IAo3QsMOga3kcMqe5XG3zEDZYurlWFdXTOJy-DQK-5PRiw8VI"/>
+<span class="font-technical-badge text-technical-badge text-primary uppercase tracking-widest">DEPLOY MEDIA PIPELINE</span>
+<h2 class="font-display-hero text-display-hero uppercase tracking-tight text-on-surface max-w-4xl mt-space-sm leading-tight">
+        Your media. Your format. Your workflow.
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-space-lg">
+        Join sound designers, video archivists, and audio engineers who demand loss-free speed without arbitrary platform restrictions.
+      </p>
+<div class="mt-space-2xl flex flex-wrap items-center justify-center gap-space-md">
+<a class="px-space-2xl py-space-md bg-primary-container text-on-primary-container font-technical-data text-technical-data uppercase tracking-wider rounded-DEFAULT shadow-[0_0_32px_rgba(180,42,26,0.6)] hover:bg-primary hover:text-on-primary transition-all transform hover:scale-105" href="#intake-terminal">
+          [ Start Forging Free ]
+        </a>
+</div>
+<div class="mt-space-3xl flex flex-wrap items-center justify-center gap-space-lg font-technical-badge text-technical-badge text-on-surface-variant">
+<span>NO REGISTRATION NEEDED</span>
+<span>•</span>
+<span>NO BANDWIDTH CAPS</span>
+<span>•</span>
+<span>UNLIMITED LOSSLESS AUDIO</span>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript Engine -->
+<script>
+    (function initMediaForge() {
+      // Platform selector chips
+      const platformChips = document.querySelectorAll('.platform-chip');
+      platformChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          platformChips.forEach(c => {
+            c.classList.remove('bg-surface-container-high', 'shadow-sm');
+            c.classList.add('bg-surface-container');
+            const dot = c.querySelector('.status-dot');
+            if (dot) dot.classList.replace('bg-primary', 'bg-transparent');
+          });
+          chip.classList.add('bg-surface-container-high', 'shadow-sm');
+          chip.classList.remove('bg-surface-container');
+          const activeDot = chip.querySelector('.status-dot');
+          if (activeDot) activeDot.classList.replace('bg-transparent', 'bg-primary');
+        });
+      });
+
+      // Format matrix selector badges
+      const formatBadges = document.querySelectorAll('.format-badge');
+      formatBadges.forEach(badge => {
+        badge.addEventListener('click', () => {
+          formatBadges.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'shadow-md');
+            b.classList.add('bg-surface-container');
+          });
+          badge.classList.add('bg-surface-container-high', 'shadow-md');
+          badge.classList.remove('bg-surface-container');
+        });
+      });
+
+      // URL Analyze simulator
+      const analyzeBtn = document.getElementById('analyze-button');
+      const analyzeText = document.getElementById('analyze-btn-text');
+      const urlInput = document.getElementById('media-url-input');
+      const detectedTitle = document.getElementById('detected-title');
+
+      if (analyzeBtn) {
+        analyzeBtn.addEventListener('click', () => {
+          analyzeText.innerText = "Analyzing...";
+          analyzeBtn.classList.add('opacity-75');
+          
+          setTimeout(() => {
+            analyzeText.innerText = "Analyzed ✓";
+            analyzeBtn.classList.remove('opacity-75');
+            if (urlInput.value.includes('playlist')) {
+              detectedTitle.innerText = "Detected_Playlist_Archive_Vol_4.zip (12 Tracks)";
+            } else {
+              detectedTitle.innerText = "Solaris_Cinematic_Audio_Session_Ep4.mp4";
+            }
+            setTimeout(() => {
+              analyzeText.innerText = "Analyze URL";
+            }, 2500);
+          }, 800);
+        });
+      }
+
+      // Download / Forge Action Multi-Stage Simulator
+      const startForgeBtn = document.getElementById('start-forge-btn');
+      const forgeBtnLabel = document.getElementById('forge-btn-label');
+      const progressContainer = document.getElementById('progress-container');
+      const transcodePercent = document.getElementById('transcode-percent');
+      const transcodeStatus = document.getElementById('transcode-status');
+
+      if (startForgeBtn) {
+        startForgeBtn.addEventListener('click', () => {
+          if (startForgeBtn.dataset.state === "complete") {
+            // Trigger pseudo download
+            forgeBtnLabel.innerText = "DOWNLOAD STARTED!";
+            setTimeout(() => {
+              forgeBtnLabel.innerText = "[ FORGE ANOTHER ]";
+              startForgeBtn.dataset.state = "idle";
+            }, 2000);
+            return;
+          }
+
+          // Start Simulation
+          progressContainer.classList.remove('hidden');
+          progressContainer.classList.add('flex');
+          startForgeBtn.disabled = true;
+          startForgeBtn.classList.add('opacity-50');
+
+          let pct = 0;
+          const phases = ["PARSING URL...", "DEMUXING STREAMS...", "HARDWARE TRANSCODING...", "PACKAGING MASTER..."];
+          
+          const interval = setInterval(() => {
+            pct += 10;
+            transcodePercent.innerText = pct + "%";
+            transcodeStatus.innerText = phases[Math.min(Math.floor(pct / 28), 3)];
+
+            if (pct >= 100) {
+              clearInterval(interval);
+              progressContainer.classList.add('hidden');
+              progressContainer.classList.remove('flex');
+              startForgeBtn.disabled = false;
+              startForgeBtn.classList.remove('opacity-50');
+              forgeBtnLabel.innerText = "[ DOWNLOAD MASTER FILE ]";
+              startForgeBtn.dataset.state = "complete";
+            }
+          }, 150);
+        });
+      }
+
+      // Download Complete Zip button
+      const zipBtn = document.getElementById('download-all-zip-btn');
+      if (zipBtn) {
+        zipBtn.addEventListener('click', () => {
+          const original = zipBtn.innerHTML;
+          zipBtn.innerHTML = "<span class='material-symbols-outlined text-[16px] animate-spin'>sync</span> Packaging ZIP Archive...";
+          setTimeout(() => {
+            zipBtn.innerHTML = "<span class='material-symbols-outlined text-[16px]'>check_circle</span> ZIP Download Started!";
+            setTimeout(() => {
+              zipBtn.innerHTML = original;
+            }, 3000);
+          }, 1200);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant"><div class="w-full px-grid-margin-mobile md:px-grid-margin-tablet lg:px-grid-margin-desktop py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-gutter-desktop"><div class="lg:col-span-2 flex flex-col gap-space-sm"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface">MEDIAFORGE</span><span class="h-1.5 w-1.5 rounded-full bg-primary-container"></span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Built for the way media moves. Engineered for ultra-low latency, high-bitrate conversion, and industrial multi-channel workflows.</p><div class="flex items-center gap-space-xs font-technical-badge text-technical-badge text-secondary mt-space-sm"><span class="material-symbols-outlined">speed</span><span>CLUSTER LATENCY: 14.2MS</span></div></div><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface mb-space-xs">PRODUCT</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="product" href="#">Overview</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="features" href="#">Hardware Engine</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="dashboard" href="#">Live Queue</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface mb-space-xs">PROCESSING</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="processing" href="#">Batch Extraction</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="processing" href="#">Stem Splitter</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="processing" href="#">Thermal Forge</a></div><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface mb-space-xs">FORMATS</span><span class="font-body-sm text-body-sm text-on-surface-variant">ProRes 422 HQ</span><span class="font-body-sm text-body-sm text-on-surface-variant">AV1 Master</span><span class="font-body-sm text-body-sm text-on-surface-variant">Lossless FLAC</span><span class="font-body-sm text-body-sm text-on-surface-variant">DCI 4K RAW</span></div><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps uppercase text-on-surface mb-space-xs">LEGAL</span><span class="font-body-sm text-body-sm text-on-surface-variant">Acceptable Use</span><span class="font-body-sm text-body-sm text-on-surface-variant">Privacy Protocol</span><span class="font-body-sm text-body-sm text-on-surface-variant">Hardware Specs</span></div></div><div class="mt-space-2xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md"><span class="font-technical-data text-technical-data text-on-surface-variant">© 2026 MEDIAFORGE SYSTEMS INC. ALL RIGHTS RESERVED.</span><div class="flex items-center gap-space-md font-technical-badge text-technical-badge text-secondary"><span>NODES: ONLINE</span><span>TLS 1.3 SECURE</span></div></div></div></footer></body></html>
