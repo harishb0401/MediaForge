@@ -96,6 +96,7 @@ export default function BatchForgeDeck() {
 
   return (
     <section 
+      id="tracklist-deck"
       style={{
         position: 'relative',
         width: '100%',

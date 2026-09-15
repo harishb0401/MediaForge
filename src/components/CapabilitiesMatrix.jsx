@@ -94,6 +94,7 @@ export default function CapabilitiesMatrix() {
 
   return (
     <section 
+      id="features"
       style={{
         position: 'relative',
         width: '100%',

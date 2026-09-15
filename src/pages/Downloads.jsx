@@ -1,349 +1,220 @@
-import React, { useState } from 'react';
-import { MOCK_DOWNLOADS_HISTORY } from '../config/platforms';
+import React, { useState, useEffect } from 'react';
+import { downloadStats, mockDownloads } from '../data/mockDownloads';
+import DownloadStats from '../components/downloads/DownloadStats';
+import DownloadFilters from '../components/downloads/DownloadFilters';
+import DownloadSearch from '../components/downloads/DownloadSearch';
+import DownloadSort from '../components/downloads/DownloadSort';
+import DownloadTable from '../components/downloads/DownloadTable';
+import DownloadCard from '../components/downloads/DownloadCard';
+import Toast from '../components/Toast';
 
 export default function Downloads() {
-  const [items, setItems] = useState(MOCK_DOWNLOADS_HISTORY);
+  const [records, setRecords] = useState(mockDownloads);
   const [filter, setFilter] = useState('ALL');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [actionNotice, setActionNotice] = useState(null);
+  const [search, setSearch] = useState('');
+  const [sortBy, setSortBy] = useState('NEWEST');
+  const [toastMessage, setToastMessage] = useState(null);
 
-  const filteredItems = items.filter(item => {
-    const matchesFilter = filter === 'ALL' || item.status.toUpperCase() === filter;
-    const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          item.platform.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          item.id.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesFilter && matchesSearch;
-  });
+  // Retry handler simulating processing progress: 0% -> 25% -> 48% -> 72% -> 100% -> COMPLETED
+  const handleRetry = (id) => {
+    // Set to processing 0%
+    setRecords((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, status: 'PROCESSING', progress: 0 } : item
+      )
+    );
 
-  const handleDelete = (id) => {
-    setItems(items.filter(item => item.id !== id));
-    showNotice(`Record ${id} removed from session queue.`);
+    const steps = [25, 48, 72, 100];
+    let stepIdx = 0;
+
+    const interval = setInterval(() => {
+      if (stepIdx < steps.length) {
+        const nextProgress = steps[stepIdx];
+        setRecords((prev) =>
+          prev.map((item) =>
+            item.id === id
+              ? {
+                  ...item,
+                  progress: nextProgress,
+                  status: nextProgress === 100 ? 'COMPLETED' : 'PROCESSING'
+                }
+              : item
+          )
+        );
+        stepIdx++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 400);
   };
 
   const handleDownload = (item) => {
-    showNotice(`Simulated download triggered for: ${item.title}`);
+    setToastMessage(`DOWNLOAD SIMULATION — BACKEND CONNECTION REQUIRED FOR ${item.id}`);
   };
 
-  const handleClearCompleted = () => {
-    setItems(items.filter(item => item.status !== 'Completed'));
-    showNotice('Completed records cleared from session.');
+  const clearFilters = () => {
+    setFilter('ALL');
+    setSearch('');
+    setSortBy('NEWEST');
   };
 
-  const showNotice = (msg) => {
-    setActionNotice(msg);
-    setTimeout(() => setActionNotice(null), 3000);
-  };
+  // Filter & Search Logic
+  const filteredRecords = records.filter((item) => {
+    // Filter matching
+    if (filter === 'YOUTUBE' && item.platform !== 'YouTube') return false;
+    if (filter === 'SPOTIFY' && item.platform !== 'Spotify') return false;
+    if (filter === 'COMPLETED' && item.status !== 'COMPLETED') return false;
+    if (filter === 'PROCESSING' && item.status !== 'PROCESSING') return false;
+    if (filter === 'FAILED' && item.status !== 'FAILED') return false;
+
+    // Search matching (title, platform, format)
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      const matchTitle = item.title.toLowerCase().includes(q);
+      const matchPlatform = item.platform.toLowerCase().includes(q);
+      const matchFormat = item.format.toLowerCase().includes(q);
+      if (!matchTitle && !matchPlatform && !matchFormat) return false;
+    }
+
+    return true;
+  });
+
+  // Sorting Logic
+  const sortedRecords = [...filteredRecords].sort((a, b) => {
+    if (sortBy === 'NEWEST') return b.timestamp - a.timestamp;
+    if (sortBy === 'OLDEST') return a.timestamp - b.timestamp;
+
+    // Helper function to parse size string to MB float
+    const parseSize = (sz) => {
+      const parts = sz.split(' ');
+      const val = parseFloat(parts[0]) || 0;
+      const unit = parts[1] ? parts[1].toUpperCase() : 'MB';
+      if (unit === 'GB') return val * 1024;
+      return val;
+    };
+
+    if (sortBy === 'LARGEST') return parseSize(b.size) - parseSize(a.size);
+    if (sortBy === 'SMALLEST') return parseSize(a.size) - parseSize(b.size);
+    return 0;
+  });
 
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 'var(--space-2xl)' }}>
-      {/* Header Banner */}
-      <section 
-        style={{
-          position: 'relative',
-          width: '100%',
-          paddingTop: 'var(--space-xl)',
-          paddingBottom: 'var(--space-xl)',
-          backgroundColor: 'rgba(36, 25, 24, 0.7)',
-          borderBottom: '1px solid rgba(212, 139, 109, 0.15)'
-        }}
-        className="px-responsive"
-      >
-        <div className="app-container" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-xs)' }}>
-            <span className="material-symbols-outlined text-primary" style={{ fontSize: '24px' }}>download</span>
-            <span className="font-technical-badge text-primary uppercase tracking-widest">
-              TELEMETRY LOG // DOWNLOAD HISTORY & QUEUE MONITOR
+    <div style={{ paddingTop: '100px', paddingBottom: '80px', minHeight: '100vh' }}>
+      <div className="px-grid-margin max-w-container">
+        {/* Page Header */}
+        <div style={{ marginBottom: 'var(--space-lg)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', marginBottom: 'var(--space-xs)' }}>
+            <span className="font-technical-badge uppercase text-secondary" style={{ letterSpacing: '0.1em' }}>
+              05 // ARCHIVE SYSTEM
             </span>
+            <span style={{ color: 'var(--outline-variant)' }}>|</span>
+            <span className="font-technical-badge uppercase text-outline">TLS 1.3 ENCRYPTED</span>
           </div>
-          <h1 className="font-headline-lg text-on-surface uppercase tracking-tight">
-            Transcode Queue & Egress History
+          <h1 className="font-headline-xl text-on-surface" style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 800, margin: 0, letterSpacing: '-0.02em' }}>
+            DOWNLOADS
           </h1>
-          <p className="font-body-md text-on-surface-variant" style={{ maxWidth: '640px' }}>
-            Inspect active background transcode jobs, monitor multi-gigabyte egress streams, and access previously forged media archives.
+          <p className="font-body-md text-on-surface-variant" style={{ margin: '8px 0 0 0', fontSize: '15px' }}>
+            FORGED MEDIA ARCHIVE // HISTORICAL TRANSCODE RECORDS
           </p>
         </div>
-      </section>
 
-      {/* Main Queue Console */}
-      <section className="px-responsive" style={{ paddingBottom: 'var(--space-4xl)' }}>
-        <div className="app-container" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-xl)' }}>
-          
-          {/* Action Notification Toast */}
-          {actionNotice && (
-            <div 
-              style={{
-                backgroundColor: 'var(--color-surface-container-high)',
-                border: '1px solid var(--color-primary)',
-                padding: '10px 16px',
-                borderRadius: 'var(--radius-default)',
-                color: 'var(--color-on-surface)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                boxShadow: 'var(--shadow-thermal-sm)'
-              }}
-              className="font-technical-data"
-            >
-              <span className="material-symbols-outlined text-primary" style={{ fontSize: '18px' }}>info</span>
-              <span>{actionNotice}</span>
-            </div>
-          )}
+        {/* Download Statistics Cards */}
+        <DownloadStats stats={downloadStats} />
 
-          {/* Quick Metrics Bar */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 'var(--space-md)' }}>
-            <div className="forge-card" style={{ padding: 'var(--space-md)', display: 'flex', flexDirection: 'column' }}>
-              <span className="font-technical-badge text-on-surface-variant uppercase">ACTIVE SESSION ITEMS</span>
-              <span className="font-headline-md text-on-surface" style={{ marginTop: '4px' }}>{items.length}</span>
-              <span className="font-technical-data text-secondary" style={{ fontSize: '11px', marginTop: '2px' }}>Current Buffer</span>
-            </div>
-
-            <div className="forge-card" style={{ padding: 'var(--space-md)', display: 'flex', flexDirection: 'column' }}>
-              <span className="font-technical-badge text-on-surface-variant uppercase">COMPLETED EXPORTS</span>
-              <span className="font-headline-md text-primary" style={{ marginTop: '4px' }}>
-                {items.filter(i => i.status === 'Completed').length}
-              </span>
-              <span className="font-technical-data text-primary" style={{ fontSize: '11px', marginTop: '2px' }}>100% Validated</span>
-            </div>
-
-            <div className="forge-card" style={{ padding: 'var(--space-md)', display: 'flex', flexDirection: 'column' }}>
-              <span className="font-technical-badge text-on-surface-variant uppercase">IN PIPELINE</span>
-              <span className="font-headline-md text-secondary" style={{ marginTop: '4px' }}>
-                {items.filter(i => i.status === 'Processing' || i.status === 'Queued').length}
-              </span>
-              <span className="font-technical-data text-outline" style={{ fontSize: '11px', marginTop: '2px' }}>Transcode Blades</span>
-            </div>
-
-            <div className="forge-card" style={{ padding: 'var(--space-md)', display: 'flex', flexDirection: 'column' }}>
-              <span className="font-technical-badge text-on-surface-variant uppercase">BUFFER VOLUME</span>
-              <span className="font-headline-md text-tertiary" style={{ marginTop: '4px' }}>4.52 GB</span>
-              <span className="font-technical-data text-outline" style={{ fontSize: '11px', marginTop: '2px' }}>Volatile RAM Cache</span>
-            </div>
+        {/* Filter, Search & Sort Control Bar */}
+        <div 
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'var(--space-md)',
+            backgroundColor: 'var(--surface-container-low)',
+            padding: 'var(--space-md)',
+            borderRadius: 'var(--radius-default)',
+            border: '1px solid rgba(212, 139, 109, 0.15)',
+            marginBottom: 'var(--space-lg)'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--space-md)', flexWrap: 'wrap' }}>
+            <DownloadFilters activeFilter={filter} onFilterChange={setFilter} />
+            <DownloadSort sortBy={sortBy} onSortChange={setSortBy} />
           </div>
-
-          {/* Filter & Search Bar */}
-          <div 
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: 'var(--space-md)',
-              padding: 'var(--space-sm)',
-              backgroundColor: 'var(--color-surface-container-low)',
-              borderRadius: 'var(--radius-default)',
-              border: '1px solid rgba(212, 139, 109, 0.15)'
-            }}
-          >
-            {/* Filter Tabs */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-              {['ALL', 'COMPLETED', 'PROCESSING', 'QUEUED'].map((st) => (
-                <button
-                  key={st}
-                  type="button"
-                  onClick={() => setFilter(st)}
-                  className={`font-technical-badge ${filter === st ? 'bg-primary-container text-on-primary-container' : 'bg-surface-container text-on-surface-variant hover:text-on-surface'}`}
-                  style={{
-                    padding: '8px 14px',
-                    borderRadius: 'var(--radius-sm)',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.15s ease'
-                  }}
-                >
-                  {st}
-                </button>
-              ))}
-            </div>
-
-            {/* Search Input & Actions */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', flex: 1, justifyContent: 'flex-end', minWidth: '240px' }}>
-              <div 
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  backgroundColor: 'var(--color-surface-container-lowest)',
-                  padding: '4px 10px',
-                  borderRadius: 'var(--radius-default)',
-                  border: '1px solid rgba(212, 139, 109, 0.2)',
-                  flex: 1,
-                  maxWidth: '320px'
-                }}
-              >
-                <span className="material-symbols-outlined text-outline" style={{ fontSize: '16px' }}>search</span>
-                <input
-                  type="text"
-                  placeholder="Filter by title, platform, or ID..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    outline: 'none',
-                    color: 'var(--color-on-surface)',
-                    fontFamily: 'var(--font-technical)',
-                    fontSize: '12px',
-                    width: '100%'
-                  }}
-                />
-              </div>
-
-              <button
-                type="button"
-                onClick={handleClearCompleted}
-                className="btn-hardware-secondary"
-                style={{ fontSize: '11px', padding: '6px 12px' }}
-              >
-                Clear Completed
-              </button>
-            </div>
-          </div>
-
-          {/* Download Records List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
-            {filteredItems.length === 0 ? (
-              <div 
-                className="forge-card"
-                style={{
-                  padding: 'var(--space-3xl)',
-                  textAlign: 'center',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: 'var(--space-sm)'
-                }}
-              >
-                <span className="material-symbols-outlined text-outline" style={{ fontSize: '40px' }}>inbox</span>
-                <span className="font-headline-sm text-on-surface">No records matching active query</span>
-                <span className="font-body-sm text-on-surface-variant">Adjust your filter parameters or start forging a new media link.</span>
-              </div>
-            ) : (
-              filteredItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="forge-card"
-                  style={{
-                    padding: 'var(--space-md) var(--space-lg)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 'var(--space-sm)',
-                    transition: 'border-color 0.2s',
-                    backgroundColor: 'var(--color-surface-container-low)'
-                  }}
-                >
-                  <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--space-md)' }}>
-                    {/* Left Details */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)', minWidth: 0 }}>
-                      <div 
-                        style={{
-                          width: '40px',
-                          height: '40px',
-                          backgroundColor: 'var(--color-surface-container-high)',
-                          borderRadius: 'var(--radius-default)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: item.status === 'Completed' ? 'var(--color-primary)' : 'var(--color-secondary)',
-                          flexShrink: 0
-                        }}
-                      >
-                        <span className="material-symbols-outlined" style={{ fontSize: '22px' }}>
-                          {item.status === 'Completed' ? 'file_download_done' : item.status === 'Processing' ? 'sync' : 'hourglass_empty'}
-                        </span>
-                      </div>
-
-                      <div style={{ minWidth: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                          <span className="font-technical-badge text-outline">{item.id}</span>
-                          <span className="font-technical-badge text-secondary uppercase">• {item.platform}</span>
-                          <span 
-                            className="font-technical-badge"
-                            style={{
-                              padding: '1px 6px',
-                              borderRadius: '2px',
-                              backgroundColor: item.status === 'Completed' 
-                                ? 'rgba(180, 42, 26, 0.2)' 
-                                : item.status === 'Processing' 
-                                ? 'rgba(212, 139, 109, 0.2)' 
-                                : 'rgba(90, 65, 60, 0.2)',
-                              color: item.status === 'Completed' ? 'var(--color-primary)' : 'var(--color-secondary)'
-                            }}
-                          >
-                            {item.status}
-                          </span>
-                        </div>
-
-                        <h3 
-                          className="font-headline-sm text-on-surface"
-                          style={{
-                            fontSize: '15px',
-                            marginTop: '2px',
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            maxWidth: '600px'
-                          }}
-                        >
-                          {item.title}
-                        </h3>
-
-                        <div className="font-technical-data text-on-surface-variant" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', fontSize: '11px', marginTop: '2px' }}>
-                          <span>FORMAT: <strong className="text-on-surface">{item.format}</strong></span>
-                          <span>•</span>
-                          <span>QUALITY: {item.quality}</span>
-                          <span>•</span>
-                          <span>DURATION: {item.duration}</span>
-                          <span>•</span>
-                          <span>SIZE: <strong className="text-secondary">{item.size}</strong></span>
-                          <span>•</span>
-                          <span>DATE: {item.date}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right Actions */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)' }}>
-                      <button
-                        type="button"
-                        onClick={() => handleDownload(item)}
-                        className="btn-forge-primary"
-                        style={{ padding: '8px 16px', fontSize: '12px' }}
-                      >
-                        <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>download</span>
-                        <span>Download</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        aria-label="Remove item"
-                        onClick={() => handleDelete(item.id)}
-                        className="btn-ghost-icon"
-                        style={{ width: '32px', height: '32px' }}
-                      >
-                        <span className="material-symbols-outlined text-outline hover:text-primary" style={{ fontSize: '18px' }}>delete</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Progress bar if processing */}
-                  {item.status === 'Processing' && (
-                    <div style={{ marginTop: '8px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }} className="font-technical-badge text-secondary">
-                        <span>TRANSCAPACITY PROGRESS</span>
-                        <span>{item.progress}%</span>
-                      </div>
-                      <div style={{ width: '100%', height: '4px', backgroundColor: 'var(--color-surface-container-lowest)', borderRadius: '2px', overflow: 'hidden' }}>
-                        <div style={{ width: `${item.progress}%`, height: '100%', backgroundColor: 'var(--color-primary)', transition: 'width 0.3s' }} />
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))
-            )}
+          <div style={{ width: '100%' }}>
+            <DownloadSearch search={search} onSearchChange={setSearch} />
           </div>
         </div>
-      </section>
+
+        {/* Records Display Section */}
+        {sortedRecords.length > 0 ? (
+          <>
+            {/* Desktop Table View */}
+            <div className="hidden md:block">
+              <DownloadTable 
+                records={sortedRecords} 
+                onDownload={handleDownload} 
+                onRetry={handleRetry} 
+              />
+            </div>
+
+            {/* Mobile Card View */}
+            <div className="block md:hidden" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)' }}>
+              {sortedRecords.map((item) => (
+                <DownloadCard 
+                  key={item.id} 
+                  item={item} 
+                  onDownload={handleDownload} 
+                  onRetry={handleRetry} 
+                />
+              ))}
+            </div>
+          </>
+        ) : (
+          /* Empty State */
+          <div 
+            style={{
+              backgroundColor: 'var(--surface-container-lowest)',
+              borderRadius: 'var(--radius-default)',
+              border: '1px dashed rgba(212, 139, 109, 0.25)',
+              padding: 'var(--space-2xl) var(--space-md)',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 'var(--space-sm)'
+            }}
+          >
+            <span className="material-symbols-outlined text-outline" style={{ fontSize: '48px', opacity: 0.6 }}>
+              inventory_2
+            </span>
+            <div className="font-headline-sm text-on-surface" style={{ fontSize: '18px', fontWeight: 700 }}>
+              NO FORGED MEDIA FOUND
+            </div>
+            <p className="font-body-sm text-on-surface-variant" style={{ maxWidth: '400px', margin: 0, fontSize: '14px' }}>
+              Try adjusting your search query or switching active filter parameters.
+            </p>
+            <button
+              type="button"
+              onClick={clearFilters}
+              className="font-technical-badge uppercase text-on-primary-container"
+              style={{
+                marginTop: 'var(--space-xs)',
+                padding: 'var(--space-xs) var(--space-md)',
+                backgroundColor: 'var(--primary-container)',
+                border: 'none',
+                borderRadius: 'var(--radius-sm)',
+                cursor: 'pointer',
+                fontSize: '12px',
+                letterSpacing: '0.05em'
+              }}
+            >
+              [ CLEAR FILTERS ]
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Toast Notification */}
+      <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
     </div>
   );
 }

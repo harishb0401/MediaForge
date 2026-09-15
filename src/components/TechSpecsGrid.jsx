@@ -54,6 +54,7 @@ export default function TechSpecsGrid() {
 
   return (
     <section 
+      id="tech-specs"
       style={{
         position: 'relative',
         width: '100%',

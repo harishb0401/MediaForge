@@ -34,6 +34,7 @@ export default function TelemetryStats() {
 
   return (
     <section 
+      id="telemetry-stats"
       style={{
         position: 'relative',
         width: '100%',

@@ -10,15 +10,15 @@ export default function MainLayout() {
       {/* Background WebGL Shader Engine */}
       <ShaderBackground />
 
-      {/* Main Header */}
+      {/* Header Navigation */}
       <Header />
 
       {/* Main Content Area */}
-      <main style={{ flex: 1, paddingTop: '80px', width: '100%', position: 'relative' }}>
+      <main style={{ width: '100%', paddingTop: '80px', flex: 1, position: 'relative' }}>
         <Outlet />
       </main>
 
-      {/* Industrial Footer */}
+      {/* Footer */}
       <Footer />
     </div>
   );
